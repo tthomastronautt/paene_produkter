@@ -7,8 +7,8 @@ import PageHeader from "../../components/pageHeader/PageHeader";
 import ProductCard from "../../components/productCard/ProductCard";
 
 const Products = () => {
-    const { products, product, rating, beauty, fragrances, loading, error } = useFetch();
-    const [filteredProducts, setFilteredProducts] = useState([...beauty, ...fragrances]);
+    const { products, product, rating, beauty, fragrances, furniture, groceries, loading, error } = useFetch();
+    const [filteredProducts, setFilteredProducts] = useState([...beauty, ...fragrances, ...furniture, ...groceries]);
     const [activeFilter, setActiveFilter] = useState("All");
 
     
@@ -32,6 +32,8 @@ const Products = () => {
         All: products,
         Beauty: beauty,
         Fragrances: fragrances,
+        Furniture: furniture,
+        Groceries: groceries,
     };
 
     const handleFilterChange = (filter) => {
@@ -72,6 +74,16 @@ const Products = () => {
                     title="Fragrances" 
                     className={activeFilter === "Fragrances" ? styles.active : ""} 
                     onClick={() => handleFilterChange("Fragrances")} 
+                />
+                <Button 
+                    title="Furniture" 
+                    className={activeFilter === "Furniture" ? styles.active : ""} 
+                    onClick={() => handleFilterChange("Furniture")} 
+                />
+                <Button 
+                    title="Groceries" 
+                    className={activeFilter === "Groceries" ? styles.active : ""} 
+                    onClick={() => handleFilterChange("Groceries")} 
                 />
             </div>
             <ul className={styles.productList}>

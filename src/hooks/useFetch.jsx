@@ -29,14 +29,16 @@ const useFetch = () => {
     const rating = products.filter((product) => product.rating > 4.8);
     const beauty = products.filter((product) => product.category.includes("beauty"));
     const fragrances = products.filter((product) => product.category.includes("fragrances"));
+    const furniture = products.filter((product) => product.category.includes("furniture"));
+    const groceries = products.filter((product) => product.category.includes("groceries"));
 
     if (!products) {
-        return { products: [], rating: [], beauty: [], fragrances: [], loading, error };
+        return { products: [], rating: [], beauty: [], fragrances: [], furniture: [], groceries: [], loading, error };
     }
 
 
 
-    return { products, rating, beauty, fragrances, loading, error };
+    return { products, rating, beauty, fragrances, furniture, groceries, loading, error };
 };
 
 export default useFetch;
