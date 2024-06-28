@@ -1,0 +1,29 @@
+.products {
+    padding: 1rem;
+}
+  
+.productList {
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+}
+
+.filterButtons{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+}
+  
+@media (max-width: 768px) {
+    .productItem {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+  
+@media (max-width: 480px) {
+    .productItem {
+        flex: 1 1 100%;
+    }
+}
